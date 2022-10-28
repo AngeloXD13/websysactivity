@@ -38,6 +38,7 @@ function search($conn)
 
     if ($validation_result->num_rows > 0) {
         echo "SR-Code existed";
+        include 'editform.php';
     } 
     else {
         echo "No SR-Code existed";

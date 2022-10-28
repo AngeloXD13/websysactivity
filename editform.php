@@ -1,6 +1,12 @@
 
 <?php
 
+include 'connection.php';
+require("connection.php");
+session_start();
+session_register('variable_name');
+$_SESSION['variable_name']=variable_value;
+
 // servername => localhost
 // username => root
 // password => empty
@@ -14,12 +20,13 @@ if ($conn === false) {
 }
 
 // Taking all 5 values from the form data(input)
-$Sr_code =  $_REQUEST['Sr-code'];
-$Lastname = $_REQUEST['Lastname'];
-$Firstname =  $_REQUEST['Firstname'];
-$Middlename = $_REQUEST['Middlename'];
-$Address = $_REQUEST['Address'];
-$ContactNo = $_REQUEST['ContactNo'];
+echo $_SESSION['srcode'];
+//$Sr_code =  $_REQUEST['Sr-code'];
+//$Lastname = $_REQUEST['Lastname'];
+//$Firstname =  $_REQUEST['Firstname'];
+//$Middlename = $_REQUEST['Middlename'];
+//$Address = $_REQUEST['Address'];
+//$ContactNo = $_REQUEST['ContactNo'];
 
 
 
