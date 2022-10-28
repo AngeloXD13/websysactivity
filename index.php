@@ -20,7 +20,7 @@ session_start();
     <h2>Landing Page</h2>
     <h3>Student</h3>
     <a href="add.php">Add</a>
-    <h4>Edit</h4>
+    <a href="edit.php">Edit</a>
     <h4>Delete</h4>
     
 </body>
