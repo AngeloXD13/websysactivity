@@ -1,3 +1,4 @@
+<!-- ANGELO DIONISIO -->
 <?php
 function stars($count){
     for ($x = 0; $x < $count; $x++) {
