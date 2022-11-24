@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>www.myWeblog.com</title>
+    <script src="jquery-3.6.1.min.js"></script>
+
+    <style>
+      * {
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -webkit-touch-callout: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        margin: 0;
+        padding: 0;
+        color: white;
+        box-sizing: border-box;
+      }
+
+      #header-title {
+        font-size: 31px;
+        color: white;
+        font-family: "Courier New";
+        display: inline-block;
+      }
+
+      header {
+        background-color: orange;
+        min-height: 80px;
+        padding-top: 22px;
+        padding-bottom: 21px;
+        padding-left: 30px;
+        padding-right: 5px;
+        grid-area: header;
+      }
+
+      #container {
+        width: 100%;
+        height: 100%;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        /* grid-gap: 10px; */
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "navbar content advert "
+          "footer footer footer";
+      }
+
+      #main {
+        background-color: lightgreen;
+        min-height: 300px;
+        overflow: hidden;
+      }
+
+      #sidebar {
+        background-color: blueviolet;
+        min-height: 350px;
+        float: left;
+        width: 200px;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        grid-area: navbar;
+      }
+
+      #sidebar .a {
+        color: aliceblue;
+      }
+
+      #sidebar2 {
+        background-color: blueviolet;
+        min-height: 350px;
+        grid-area: advert;
+        float: right;
+        width: 200px;
+      }
+
+      #column1 {
+        background-color: lightgreen;
+        min-height: 350px;
+        padding-top: 28px;
+        padding-right: 28px;
+        padding-bottom: 28px;
+        padding-left: 28px;
+        grid-area: content;
+      }
+
+      footer {
+        background-color: orange;
+        min-height: 60px;
+        grid-area: footer;
+      }
+
+      .input1 {
+        font-size: x-small;
+      }
+
+      .btnsearch {
+        font-size: x-small;
+      }
+
+      .formside {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
+      .link-contribution {
+        color: rgba(255, 255, 255, 1);
+      }
+
+      #content-title {
+      }
+
+      #idngpusa {
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1 id="header-title">My Weblog</h1>
+      </header>
+
+      <div id="sidebar">
+        <form action="" class="formside">
+          <input type="text" class="input1" placeholder="Search..." />
+          <button type="submit" class="btnsearch">search</button>
+        </form>
+
+        <a href="#" class="link-contribution">Contribution</a>
+      </div>
+
+      <div id="sidebar2">
+        <div class="gelo">
+          <h1 style="font-size: 12px" class="icon">
+            <img
+              src="https://img.icons8.com/bubbles/50/000000/man-in-blue-jacket-information.png"
+            />
+            This Cat is Cute
+          </h1>
+          <p>&nbsp;Things this cat loves:</p>
+          <h1 style="font-size: 14px">&nbsp;&nbsp;eat</h1>
+          <h1 style="font-size: 14px">&nbsp;&nbsp;sleep</h1>
+          <h1 style="font-size: 14px">&nbsp;&nbsp;purr</h1>
+
+          <form>
+            <label for="indoor"
+              ><input
+                id="indoor"
+                type="radio"
+                name="indoor-outdoor"
+                value="indoor"
+                checked
+              />
+              Indoor</label
+            >
+            <label for="outdoor"
+              ><input
+                id="outdoor"
+                type="radio"
+                name="indoor-outdoor"
+                value="outdoor"
+              />
+              Outdoor</label
+            ><br />
+            <label for="loving"
+              ><input
+                id="loving"
+                type="checkbox"
+                name="personality"
+                value="loving"
+                checked
+              />
+              Loving</label
+            >
+            <label for="lazy"
+              ><input
+                id="lazy"
+                type="checkbox"
+                name="personality"
+                value="lazy"
+              />
+              Lazy</label
+            >
+            <label for="energetic"
+              ><input
+                id="energetic"
+                type="checkbox"
+                name="personality"
+                value="energetic"
+              />
+              Energetic</label
+            ><br />
+          </form>
+        </div>
+      </div>
+
+      <div id="column1">
+        <h1 id="content-title">Post</h1>
+        <img id="idngpusa" src="pusa.jpg" id="img1" width="200px" />
+        <h2>Angelo Dionisio</h2>
+        <h4>BSIT-3106</h4>
+        <h5>Mabini, Batangas</h5>
+        <a href="#" id="readme">Read me</a>
+      </div>
+
+      <footer>
+        <h2 style="font-size: 12px">Copyright 2099</h2>
+      </footer>
+    </div>
+  </body>
+
+  <script>
+    var x = 0;
+    $("#idngpusa").click(function () {
+      if (x == 0) {
+        $("#idngpusa").width(400);
+        x = 1;
+      } else {
+        $("#idngpusa").width(200);
+        x = 0;
+      }
+    });
+
+    $("#readme").click(function () {
+      $(".gelo").remove();
+      $("#sidebar2").css("background-color", "white");
+    });
+  </script>
+</html>
